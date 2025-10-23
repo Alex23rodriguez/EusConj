@@ -1,31 +1,3 @@
-pronouns_nor = {
-    "1s": "ni",
-    "2s": "zu",
-    "3s": "hura",
-    "1p": "gu",
-    "2p": "zuek",
-    "3p": "haiek",
-}
-
-pronouns_nori = {
-    "1s": "niri",
-    "2s": "zuri",
-    "3s": "hari",
-    "1p": "guri",
-    "2p": "zuei",
-    "3p": "haiei",
-}
-
-pronouns_nork = {
-    "1s": "nik",
-    "2s": "hark",
-    "3s": "guk",
-    "1p": "zuk",
-    "2p": "zuek",
-    "3p": "haiek",
-}
-
-
 def nor(n):
     nor_dict = {
         "1s": "naiz",
