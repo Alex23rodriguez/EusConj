@@ -4,11 +4,11 @@ requires-python = ">=3.12"
 
 [[package]]
 name = "cligame"
-version = "0.2.2"
+version = "0.2.3"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/28/d7/67b41fd949eab484d4d0ab083d2fe11214b4014262b818019ab7fdc87b53/cligame-0.2.2.tar.gz", hash = "sha256:91cabf54f8bdf2f83aa14692682a444a62662e04421908575eba51d68b946115", size = 17167, upload-time = "2023-04-01T17:53:19.644Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/20/3a/474771c9404b549f4ec9bbdf7fd8c892348f12e57d1608737bd6892b14c1/cligame-0.2.3.tar.gz", hash = "sha256:1bc1699c9ba4c29acba607de9632fe26fb5907d6617cedc6ae6c6f63fb2e99b6", size = 16711, upload-time = "2025-10-24T10:41:54.424Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/57/e6/9621aa2261ca0177e1ee4a31ce35456b8e0c1ae918d467c1d688591eb835/cligame-0.2.2-py3-none-any.whl", hash = "sha256:2a3737ed6d6e9c9d5c82dd8a63a0372ff85016835f6ac477c0e9f63e647a0241", size = 17425, upload-time = "2023-04-01T17:53:17.511Z" },
+    { url = "https://files.pythonhosted.org/packages/ee/11/e314075e9a06b39712d7349929d0033f894e60de3b3caed8b9dfb6c59ef2/cligame-0.2.3-py3-none-any.whl", hash = "sha256:905023fff9b9ea87525fafac690ea7dc2f27e0ca202d9a167d7b446b389efd17", size = 17629, upload-time = "2025-10-24T10:41:53.294Z" },
 ]
 
 [[package]]
@@ -20,4 +20,4 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "cligame", specifier = ">=0.2.2" }]
+requires-dist = [{ name = "cligame", specifier = ">=0.2.3" }]
