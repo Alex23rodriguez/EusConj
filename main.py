@@ -48,6 +48,7 @@ def get_2_args():
 def nor_question():
     arg = choice(pronouns)
     correct = nor_(arg)
+    print("nor")
     print(pronouns_nor[arg])
     given = input("".ljust(17))
     return given, correct
@@ -56,6 +57,7 @@ def nor_question():
 def nor_nork_question():
     n, nk = get_2_args()
     correct = nor_nork(n, nk)
+    print("nork nor")
     print(pronouns_nork[nk], pronouns_nor[n])
     given = input("".ljust(17))
     return given, correct
@@ -63,6 +65,7 @@ def nor_nork_question():
 
 def nor_nori_question():
     n, ni = get_2_args()
+    print("nor nori")
     correct = nor_nori(n, ni)
     print(pronouns_nor[n], pronouns_nori[ni])
     given = input("".ljust(17))
@@ -72,6 +75,7 @@ def nor_nori_question():
 def nor_nori_nork_question():
     n = choice(["3s", "3p"])
     ni, nk = get_2_args()
+    print("nork nor nori")
     correct = nor_nori_nork(n, ni, nk)
     print(pronouns_nork[nk], pronouns_nor[n], pronouns_nori[ni])
     given = input("".ljust(17))
@@ -89,9 +93,11 @@ funcs = {
 def question(_):
     choices = ["nor", "nor_nork", "nor_nori", "nor_nori_nork"]
 
-    given, correct = funcs[choice(choices)]()
+    given, ans = funcs[choice(choices)]()
 
-    return given == "".join(correct), " ".join(correct)
+    correct = "".join(ans).replace(" ", "").replace("_", "")
+
+    return given == correct, f"{correct}: " + " - ".join(ans)
 
 
 if __name__ == "__main__":
