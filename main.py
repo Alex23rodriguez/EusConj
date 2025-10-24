@@ -2,7 +2,7 @@ from random import choice
 
 from cligame import Game
 
-from util import nor, nor_nori, nor_nori_nork, nor_nork
+from util import check_non_self_ref, nor_, nor_nori, nor_nori_nork, nor_nork
 
 pronouns_nor = {
     "1s": "ni",
@@ -34,47 +34,36 @@ pronouns_nork = {
 
 pronouns = ["1s", "2s", "3s", "1p", "2p", "3p"]
 
-forbidden = [
-    ("1s", "1s"),
-    ("1s", "1p"),
-    ("1p", "1s"),
-    ("1p", "1p"),
-    ("2s", "2s"),
-    ("2s", "2p"),
-    ("2p", "2s"),
-    ("2p", "2p"),
-]
-
 
 def get_2_args():
     while True:
         args = choice(pronouns), choice(pronouns)
-        if args not in forbidden:
+        try:
+            check_non_self_ref(*args)
             return args
-
-
-# VERB = "esan"
+        except ValueError:
+            pass
 
 
 def nor_question():
     arg = choice(pronouns)
-    correct = nor(arg)
+    correct = nor_(arg)
     given = input(f"{pronouns_nor[arg]} ___ ".ljust(17))
-    return correct == given, correct
+    return given, correct
 
 
 def nor_nork_question():
     n, nk = get_2_args()
     correct = nor_nork(n, nk)
     given = input(f"{pronouns_nork[nk]} {pronouns_nor[n]} ___ ".ljust(17))
-    return correct == given, correct
+    return given, correct
 
 
 def nor_nori_question():
     n, ni = get_2_args()
     correct = nor_nori(n, ni)
     given = input(f"{pronouns_nor[n]} {pronouns_nori[ni]} ___ ".ljust(17))
-    return correct == given, correct
+    return given, correct
 
 
 def nor_nori_nork_question():
@@ -84,7 +73,7 @@ def nor_nori_nork_question():
     given = input(
         f"{pronouns_nork[nk]} {pronouns_nor[n]} {pronouns_nori[ni]} ___ ".ljust(17)
     )
-    return correct == given, correct
+    return given, correct
 
 
 funcs = {
@@ -98,7 +87,9 @@ funcs = {
 def question(_):
     choices = ["nor", "nor_nork", "nor_nori", "nor_nori_nork"]
 
-    return funcs[choice(choices)]()
+    given, correct = funcs[choice(choices)]()
+
+    return given == "".join(correct), " ".join(correct)
 
 
 if __name__ == "__main__":

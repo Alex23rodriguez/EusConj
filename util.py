@@ -1,4 +1,9 @@
-def nor(n):
+def check_non_self_ref(n1, n2):
+    if (n1[0] == n2[0] == "1") or (n1[0] == n2[0] == "2"):
+        raise ValueError(f"invalid parameter combination: {n1}-{n2}")
+
+
+def nor_(n):
     nor_dict = {
         "1s": "naiz",
         "2s": "zara",
@@ -8,10 +13,12 @@ def nor(n):
         "3p": "dira",
     }
 
-    return nor_dict[n]
+    return [nor_dict[n]]
 
 
-def nor_nork(nor, nork):
+def nor_nork(n, nk):
+    check_non_self_ref(n, nk)
+
     nor_dict = {
         "1s": "nau",
         "2s": "zaitu",
@@ -30,14 +37,16 @@ def nor_nork(nor, nork):
         "3p": "te",  # (z) te
     }
 
-    ans = nor_dict[nor] + nork_dict[nork]
+    nor = nor_dict[n]
+    nork = nork_dict[nk]
 
-    ans = ans.replace("tute", "tuzte")
+    if nk == "3p" and nor.endswith("tu"):
+        nork = "zte"
 
-    return ans
+    return [nor, nork]
 
 
-def nor_nori(nor, nori):
+def nor_nori(n, ni):
     nor_dict = {
         "1s": "natzai",
         "2s": "zatzaizki",
@@ -56,15 +65,20 @@ def nor_nori(nor, nori):
         "3p": "e",
     }
 
-    ans = nor_dict[nor] + nori_dict[nori]
+    nor = nor_dict[n]
+    nori = nori_dict[ni]
 
-    if nor == "2p":
-        ans += "te"
+    ans = [nor, nori]
+
+    if n == "2p":
+        ans.append("_te")
 
     return ans
 
 
-def nor_nori_nork(nor, nori, nork):
+def nor_nori_nork(n, ni, nk):
+    check_non_self_ref(ni, nk)
+
     nor_dict = {
         "3s": "di",
         "3p": "dizki",
@@ -88,9 +102,11 @@ def nor_nori_nork(nor, nori, nork):
         "3p": "te",
     }
 
-    if nori == "1s" and nork == "3s":
-        ans = nor_dict[nor] + "t"
+    if ni == "1s" and nk == "3s":
+        nori = "t"
     else:
-        ans = nor_dict[nor] + nori_dict[nori] + nork_dict[nork]
+        nori = nori_dict[ni]
+
+    ans = [nor_dict[n], nori, nork_dict[nk]]
 
     return ans
