@@ -48,21 +48,24 @@ def get_2_args():
 def nor_question():
     arg = choice(pronouns)
     correct = nor_(arg)
-    given = input(f"{pronouns_nor[arg]} ___ ".ljust(17))
+    print(pronouns_nor[arg])
+    given = input("".ljust(17))
     return given, correct
 
 
 def nor_nork_question():
     n, nk = get_2_args()
     correct = nor_nork(n, nk)
-    given = input(f"{pronouns_nork[nk]} {pronouns_nor[n]} ___ ".ljust(17))
+    print(pronouns_nork[nk], pronouns_nor[n])
+    given = input("".ljust(17))
     return given, correct
 
 
 def nor_nori_question():
     n, ni = get_2_args()
     correct = nor_nori(n, ni)
-    given = input(f"{pronouns_nor[n]} {pronouns_nori[ni]} ___ ".ljust(17))
+    print(pronouns_nor[n], pronouns_nori[ni])
+    given = input("".ljust(17))
     return given, correct
 
 
@@ -70,9 +73,8 @@ def nor_nori_nork_question():
     n = choice(["3s", "3p"])
     ni, nk = get_2_args()
     correct = nor_nori_nork(n, ni, nk)
-    given = input(
-        f"{pronouns_nork[nk]} {pronouns_nor[n]} {pronouns_nori[ni]} ___ ".ljust(17)
-    )
+    print(pronouns_nork[nk], pronouns_nor[n], pronouns_nori[ni])
+    given = input("".ljust(17))
     return given, correct
 
 
