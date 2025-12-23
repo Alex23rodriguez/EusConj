@@ -39,6 +39,14 @@ verbos_nor_nori = {
         "2p": "habeis olvidado",
         "3p": "han olvidado",
     },
+    "ir a": {
+        "1s": "he ido a donde",
+        "2s": "has ido a donde",
+        "3s": "ha ido a donde",
+        "1p": "hemos ido a donde",
+        "2p": "habeis ido a donde",
+        "3p": "han ido a donde",
+    },
 }
 
 verbos_nor_nori_nork = {

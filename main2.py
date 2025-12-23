@@ -2,9 +2,9 @@ from random import choice
 
 from cligame import Game
 
-from pronouns import (pronouns, pronouns_nor, pronouns_nori, pronouns_nork,
-                      sp_direct_obj_pronouns, sp_indirect_obj_pronouns,
-                      sp_pronouns)
+from pronouns import (nor_nori_prononuns_sp, pronouns, pronouns_nor,
+                      pronouns_nori, pronouns_nork, sp_direct_obj_pronouns,
+                      sp_indirect_obj_pronouns, sp_pronouns)
 from spanish_verbs import (verbos_nor, verbos_nor_nori, verbos_nor_nori_nork,
                            verbos_nor_nork)
 from util import check_non_self_ref, nor_, nor_nori, nor_nori_nork, nor_nork
@@ -47,12 +47,10 @@ def nor_nori_question():
     correct = nor_nori(n, ni)
 
     print("nor nori")
-    print(f"{n = }")
-    print(f"{ni = }")
-    verb = "olvidar"
-    print(f"{sp_direct_obj_pronouns[n]} {verbos_nor_nori[verb][ni]}")
+    verb = "ir a"
+    print(f"{verbos_nor_nori[verb][n]} {nor_nori_prononuns_sp[ni]}")
 
-    given = input("ahaztu ".rjust(17))
+    given = input("joan ".rjust(17))
     return given, correct
 
 
@@ -60,7 +58,7 @@ def nor_nori_nork_question():
     n = choice(["3s", "3p"])
     ni, nk = get_2_args()
 
-    print("nor nori nor")
+    print("nor nori nork")
     verb = "dar"
     nor_text = "el libro" if n == "3s" else "los libros"
     print(f"{sp_indirect_obj_pronouns[ni]} {verbos_nor_nori_nork[verb][nk]} {nor_text}")
@@ -80,6 +78,7 @@ funcs = {
 
 def question(_):
     choices = ["nor", "nor_nork", "nor_nori", "nor_nori_nork"]
+    # choices = ["nor_nori"]
 
     given, ans = funcs[choice(choices)]()
 

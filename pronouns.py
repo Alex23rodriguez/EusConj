@@ -55,3 +55,12 @@ sp_indirect_obj_pronouns = {
     "2p": "os",
     "3p": "les",
 }
+
+nor_nori_prononuns_sp = {
+    "1s": "mi",
+    "2s": "ti",
+    "3s": "ella",
+    "1p": "nosotros",
+    "2p": "vosotros",
+    "3p": "ellos",
+}
