@@ -76,6 +76,8 @@ def nor_nori(n, ni):
     ans = [nor, nori]
 
     if n == "2p":
+        if ni == "1s":
+            ans[1] = "da"
         ans.append("te")
 
     return ans
