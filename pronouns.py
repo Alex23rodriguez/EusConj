@@ -64,3 +64,30 @@ nor_nori_prononuns_sp = {
     "2p": "vosotros",
     "3p": "ellos",
 }
+
+de_pronouns = {
+    "1s": "ich",
+    "2s": "du",
+    "3s": "er",
+    "1p": "wir",
+    "2p": "ihr",
+    "3p": "sie",
+}
+
+de_pronouns_akk = {
+    "1s": "mich",
+    "2s": "dich",
+    "3s": "ihn",
+    "1p": "uns",
+    "2p": "euch",
+    "3p": "sie",
+}
+
+de_pronouns_dat = {
+    "1s": "mir",
+    "2s": "dir",
+    "3s": "ihm",
+    "1p": "uns",
+    "2p": "euch",
+    "3p": "ihnen",
+}
