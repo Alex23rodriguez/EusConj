@@ -146,4 +146,4 @@ if __name__ == "__main__":
         },
     )
 
-    mygame.start(host="0.0.0.0", port=8000)
+    mygame.start(host="0.0.0.0", port=8000, root_path="/conj")
