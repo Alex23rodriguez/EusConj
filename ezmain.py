@@ -43,7 +43,7 @@ NorQ = Q[str](
     get_seed=nor_seed,
     ask=ask_nor,
     correct=correct_nor,
-    explain=explain_nor,
+    # explain=explain_nor,
 )
 
 
@@ -70,7 +70,7 @@ NorNorkQ = Q[tuple[str, str]](
     get_seed=get_2_args,
     ask=ask_nor_nork,
     correct=correct_nor_nork,
-    explain=explain_nor_nork,
+    # explain=explain_nor_nork,
 )
 
 
@@ -97,7 +97,7 @@ NorNoriQ = Q[tuple[str, str]](
     get_seed=get_2_args,
     ask=ask_nor_nori,
     correct=correct_nor_nori,
-    explain=explain_nor_nori,
+    # explain=explain_nor_nori,
 )
 
 
@@ -132,7 +132,7 @@ NorNoriNorkQ = Q[tuple[str, str, str]](
     get_seed=nor_nori_nork_seed,
     ask=ask_nor_nori_nork,
     correct=correct_nor_nori_nork,
-    explain=explain_nor_nori_nork,
+    # explain=explain_nor_nori_nork,
 )
 
 if __name__ == "__main__":
