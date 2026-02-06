@@ -6,4 +6,8 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
   "cligame>=0.2.3",
+  "ezquiz",
 ]
+
+[tool.uv.sources]
+ezquiz = { git = "https://github.com/Alex23rodriguez/ezquiz" }
