@@ -31,14 +31,6 @@ verbos_nor_nork = {
 
 
 verbos_nor_nori = {
-    "olvidar": {
-        "1s": "he olvidado",
-        "2s": "has olvidado",
-        "3s": "ha olvidado",
-        "1p": "hemos olvidado",
-        "2p": "habeis olvidado",
-        "3p": "han olvidado",
-    },
     "ir a": {
         "1s": "he ido a donde",
         "2s": "has ido a donde",

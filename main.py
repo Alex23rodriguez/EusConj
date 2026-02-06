@@ -74,7 +74,24 @@ NorNorkQ = Q[tuple[str, str]](
 )
 
 
+def nor_nori_common_seed():
+    n = choice(["3s", "3p"])
+    ni = choice(pronouns)
+    return n, ni
+
+
 def ask_nor_nori(p: tuple[str, str]):
+    n, ni = p
+    nor_verb = "ha" if n == "3s" else "han"
+    nor_text = "el libro" if n == "3s" else "los libros"
+    return {
+        "type": "fill",
+        "context": f"se {sp_indirect_obj_pronouns[ni]} {nor_verb} olvidado {nor_text}",
+        "text": "ahaztu [...]",
+    }
+
+
+def ask_nor_nori_all(p: tuple[str, str]):
     n, ni = p
     return {
         "type": "fill",
@@ -93,9 +110,16 @@ def explain_nor_nori(p: tuple[str, str]):
     return {"type": "text", "value": " - ".join(nor_nori(n, ni))}
 
 
-NorNoriQ = Q[tuple[str, str]](
-    get_seed=get_2_args,
+NorNoriCommonQ = Q[tuple[str, str]](
+    get_seed=nor_nori_common_seed,
     ask=ask_nor_nori,
+    correct=correct_nor_nori,
+    # explain=explain_nor_nori,
+)
+
+NorNoriAllQ = Q[tuple[str, str]](
+    get_seed=get_2_args,
+    ask=ask_nor_nori_all,
     correct=correct_nor_nori,
     # explain=explain_nor_nori,
 )
@@ -140,9 +164,10 @@ if __name__ == "__main__":
         "Euskera - Verbo auxiliar",
         {
             "nor": NorQ,
-            "nor_nork": NorNorkQ,
-            "nor_nori": NorNoriQ,
-            "nor_nori_nork": NorNoriNorkQ,
+            "nor nork": NorNorkQ,
+            "nor nori (common)": NorNoriCommonQ,
+            "nor nori (all)": NorNoriAllQ,
+            "nor nori nork": NorNoriNorkQ,
         },
     )
 
