@@ -137,8 +137,8 @@ def ask_nor_nori_nork(p: tuple[str, str, str]):
     nor_text = "el libro" if n == "3s" else "los libros"
     return {
         "type": "fill",
-        "context": f"{sp_indirect_obj_pronouns[ni]} {verbos_nor_nori_nork['dar'][nk]} {nor_text}",
-        "text": "joan [...]",
+        "context": f"{sp_pronouns[nk]} {sp_indirect_obj_pronouns[ni]} {verbos_nor_nori_nork['dar'][nk]} {nor_text}",
+        "text": "eman [...]",
     }
 
 
