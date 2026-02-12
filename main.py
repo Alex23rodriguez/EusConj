@@ -160,7 +160,9 @@ NorNoriNorkQ = Q[tuple[str, str, str]](
 )
 
 if __name__ == "__main__":
-    mygame = APIGame(
+    mygame = APIGame()
+    mygame.add_quiz(
+        "aux",
         "Euskera - Verbo auxiliar",
         {
             "nor": NorQ,
@@ -171,4 +173,4 @@ if __name__ == "__main__":
         },
     )
 
-    mygame.start(host="0.0.0.0", port=8000, root_path="/conj")
+    mygame.start(host="0.0.0.0", port=8000)
