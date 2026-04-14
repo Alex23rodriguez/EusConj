@@ -6,6 +6,7 @@ from conj import conj_past, conj_present
 from pronouns import (
     nor_nori_prononuns_sp,
     pronouns,
+    pronouns_nor,
     sp_direct_obj_pronouns,
     sp_indirect_obj_pronouns,
     sp_pronouns,
@@ -171,11 +172,13 @@ NorNoriNorkQ = Q[tuple[str, str, str]](
 
 present_qs: dict[str, Q] = {}
 for k, v in conj_present.items():
-    present_qs[k] = Q.from_dict(v)
+    d2 = {f"{pronouns_nor[a]} ({k})": b for a, b in v.items()}
+    present_qs[k] = Q.from_dict(d2)
 
 past_qs: dict[str, Q] = {}
 for k, v in conj_past.items():
-    past_qs[k] = Q.from_dict(v)
+    d2 = {f"{pronouns_nor[a]} ({k})": b for a, b in v.items()}
+    past_qs[k] = Q.from_dict(d2)
 
 if __name__ == "__main__":
     mygame = APIGame()

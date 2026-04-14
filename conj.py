@@ -1,16 +1,14 @@
 conj_present = {
-    "ukan": {
-        "1s": "dut",
-        "2S": "____",
-        "3s": "du",
-        "1p": "dugu",
-        "2s": "duzu",
-        "2p": "duzue",
-        "3p": "dute",
-    },
+    # "ukan": {
+    #     "1s": "dut",
+    #     "3s": "du",
+    #     "1p": "dugu",
+    #     "2s": "duzu",
+    #     "2p": "duzue",
+    #     "3p": "dute",
+    # },
     "izan": {
         "1s": "naiz",
-        "2S": "haiz",
         "3s": "da",
         "1p": "gara",
         "2s": "zara",
@@ -19,7 +17,6 @@ conj_present = {
     },
     "egon": {
         "1s": "nago",
-        "2S": "hago",
         "3s": "dago",
         "1p": "gaude",
         "2s": "zaude",
@@ -28,7 +25,6 @@ conj_present = {
     },
     "joan": {
         "1s": "noa",
-        "2S": "hoa",
         "3s": "doa",
         "1p": "goaz",
         "2s": "zoaz",
@@ -53,14 +49,14 @@ conj_present = {
     },
 }
 conj_past = {
-    "ukan": {
-        "1s": "nuen",
-        "2s": "zenuen",
-        "3s": "zuen",
-        "1p": "genuen",
-        "2p": "zenuten",
-        "3p": "zuten",
-    },
+    # "ukan": {
+    #     "1s": "nuen",
+    #     "2s": "zenuen",
+    #     "3s": "zuen",
+    #     "1p": "genuen",
+    #     "2p": "zenuten",
+    #     "3p": "zuten",
+    # },
     "izan": {
         "1s": "nintzen",
         "2s": "zinen",
