@@ -2,10 +2,20 @@ from random import choice
 
 from ezquiz import APIGame, Q
 
-from pronouns import (nor_nori_prononuns_sp, pronouns, sp_direct_obj_pronouns,
-                      sp_indirect_obj_pronouns, sp_pronouns)
-from spanish_verbs import (verbos_nor, verbos_nor_nori, verbos_nor_nori_nork,
-                           verbos_nor_nork)
+from conj import conj_past, conj_present
+from pronouns import (
+    nor_nori_prononuns_sp,
+    pronouns,
+    sp_direct_obj_pronouns,
+    sp_indirect_obj_pronouns,
+    sp_pronouns,
+)
+from spanish_verbs import (
+    verbos_nor,
+    verbos_nor_nori,
+    verbos_nor_nori_nork,
+    verbos_nor_nork,
+)
 from util import check_non_self_ref, nor_, nor_nori, nor_nori_nork, nor_nork
 
 
@@ -159,6 +169,14 @@ NorNoriNorkQ = Q[tuple[str, str, str]](
     # explain=explain_nor_nori_nork,
 )
 
+present_qs: dict[str, Q] = {}
+for k, v in conj_present.items():
+    present_qs[k] = Q.from_dict(v)
+
+past_qs: dict[str, Q] = {}
+for k, v in conj_past.items():
+    past_qs[k] = Q.from_dict(v)
+
 if __name__ == "__main__":
     mygame = APIGame()
     mygame.add_quiz(
@@ -171,6 +189,17 @@ if __name__ == "__main__":
             "nor nori (all)": NorNoriAllQ,
             "nor nori nork": NorNoriNorkQ,
         },
+    )
+
+    mygame.add_quiz(
+        "conj_present",
+        "Euskera - Conjugacion Presente",
+        present_qs,
+    )
+    mygame.add_quiz(
+        "conj_past",
+        "Euskera - Conjugacion Pasado",
+        past_qs,
     )
 
     mygame.start(host="0.0.0.0", port=8000)
